@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabaddi Game Scoreboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .team {
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            width: 200px;
+        }
+        .team-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .team-score {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .winning-team {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 56px;
+            color: #d9534f;
+        }
+        .losing-team {
+            font-family: 'Arial', sans-serif;
+            font-size: 36px;
+            color: #5bc0de;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Kabaddi Game Scoreboard</h1>
+
+<div class="scoreboard">
+    <div class="team" id="team1">
+        <div class="team-name" id="team1-name" style="color: red;">Team Red</div>
+        <div class="team-score" id="team1-score">25</div>
+    </div>
+    <div class="team" id="team2">
+        <div class="team-name" id="team2-name" style="color: blue;">Team Blue</div>
+        <div class="team-score" id="team2-score">40</div>
+    </div>
+</div>
+
+<script>
+    // Get the scores
+    const team1Score = parseInt(document.getElementById('team1-score').textContent);
+    const team2Score = parseInt(document.getElementById('team2-score').textContent);
+
+    // Compare scores and add classes
+    if (team1Score > team2Score) {
+        document.getElementById('team1-score').classList.add('winning-team');
+        document.getElementById('team2-score').classList.add('losing-team');
+    } else if (team2Score > team1Score) {
+        document.getElementById('team2-score').classList.add('winning-team');
+        document.getElementById('team1-score').classList.add('losing-team');
+    } else {
+        document.getElementById('team1-score').classList.add('losing-team');
+        document.getElementById('team2-score').classList.add('losing-team');
+    }
+</script>
+
+</body>
+</html>

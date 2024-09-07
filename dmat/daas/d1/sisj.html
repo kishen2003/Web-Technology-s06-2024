@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .form-container, .table-container {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2, .table-container h2 {
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Student Information System</h1>
+</header>
+
+<div class="container">
+    <div class="form-container">
+        <h2>Add Student</h2>
+        <form id="studentForm">
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" name="studentId" required><br><br>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <button type="submit" class="btn">Add Student</button>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <h2>Student List</h2>
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Student rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.getElementById('studentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get form values
+        const studentId = document.getElementById('studentId').value;
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+
+        // Create a new row
+        const table = document.getElementById('studentTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        // Insert cells
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+        const cell5 = newRow.insertCell(4);
+
+        // Add values to cells
+        cell1.textContent = studentId;
+        cell2.textContent = firstName;
+        cell3.textContent = lastName;
+        cell4.textContent = email;
+        cell5.textContent = phone;
+
+        // Reset the form
+        document.getElementById('studentForm').reset();
+    });
+</script>
+
+</body>
+</html>

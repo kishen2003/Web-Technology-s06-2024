@@ -1,0 +1,36 @@
+// JavaScript code for signup and login with a specific username and password
+
+// Event listener for signup form submission
+document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Save specific user data in local storage
+    const specificUsername = 'specificUser';
+    const specificPassword = 'specificPass';
+
+    if (username === specificUsername && password === specificPassword) {
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+        alert('Signup successful! You can now login.');
+        window.location.href = 'login.html';
+    } else {
+        alert('Invalid signup credentials. Please use the specific username and password.');
+    }
+});
+
+// Event listener for login form submission
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Check user data in local storage
+    if (localStorage.getItem('username') === username && localStorage.getItem('password') === password) {
+        alert('Login successful!');
+        window.location.href = 'home.html';
+    } else {
+        alert('Invalid username or password.');
+    }
+});

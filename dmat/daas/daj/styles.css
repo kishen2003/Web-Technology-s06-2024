@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#language-list a {
+    display: block;
+    margin: 5px 0;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+#language-list a:hover {
+    text-decoration: underline;
+}
+
+#book-titles {
+    margin-top: 20px;
+}
+
+#book-titles ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#book-titles li {
+    margin: 5px 0;
+}

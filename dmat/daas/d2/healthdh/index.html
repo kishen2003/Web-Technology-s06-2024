@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tips</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Health Tips</h1>
+    </header>
+
+    <div class="container">
+        <div class="tips-form">
+            <h2>Submit Your Health Tip</h2>
+            <form id="tipForm">
+                <label for="tipTitle">Tip Title:</label>
+                <input type="text" id="tipTitle" name="tipTitle" required><br><br>
+
+                <label for="tipDetails">Tip Details:</label><br>
+                <textarea id="tipDetails" name="tipDetails" rows="4" required></textarea><br><br>
+
+                <button type="submit">Submit Tip</button>
+            </form>
+        </div>
+
+        <div class="tips-list">
+            <h2>Health Tips</h2>
+            <div id="tipsContainer">
+                <!-- Health tips will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

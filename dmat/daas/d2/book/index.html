@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Available Books</h1>
+    <form id="bookForm">
+        <table id="bookTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Quantity Available</th>
+                    <th>Price</th>
+                    <th>Select Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Book 1</td>
+                    <td>Author 1</td>
+                    <td>10</td>
+                    <td>$15</td>
+                    <td><input type="number" name="book1" min="0" max="10" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Book 2</td>
+                    <td>Author 2</td>
+                    <td>5</td>
+                    <td>$20</td>
+                    <td><input type="number" name="book2" min="0" max="5" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Book 3</td>
+                    <td>Author 3</td>
+                    <td>7</td>
+                    <td>$12</td>
+                    <td><input type="number" name="book3" min="0" max="7" value="0"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" onclick="calculateBill()">Calculate Bill</button>
+    </form>
+
+    <div id="bill">
+        <h2>Bill Details</h2>
+        <p id="totalAmount">Total Amount: $0</p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { max-width: 300px; margin: auto; padding: 1em; border: 1px solid #ccc; border-radius: 1em; }
+        div + div { margin-top: 1em; }
+        label { display: block; }
+        input { width: 100%; padding: 0.5em; margin-top: 0.5em; }
+    </style>
+</head>
+<body>
+    <h1>Signup</h1>
+    <form id="signupForm">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <button type="submit">Signup</button>
+        </div>
+        <div>
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Save user data in local storage
+            if (localStorage.getItem(username)) {
+                alert('Username already exists. Please choose a different username.');
+            } else {
+                localStorage.setItem(username, password);
+                alert('Signup successful! You can now login.');
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>
